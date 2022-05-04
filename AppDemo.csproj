@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\Impl\**" />
+    <EmbeddedResource Remove="Services\Impl\**" />
+    <None Remove="Services\Impl\**" />
+    <Page Remove="Services\Impl\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\IModalService.cs" />
+    <Compile Remove="Services\INavigator.cs" />
+    <Compile Remove="Services\ISidesheetService.cs" />
+    <Compile Remove="ViewModels\ISideSheetViewModel.cs" />
+    <Compile Remove="ViewModels\IViewModel.cs" />
+    <Compile Remove="ViewModels\SideSheetViewModelBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Services\Impl\SidesheetService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppDemo.Modules.Core\AppDemo.Modules.Core.csproj" />
+    <ProjectReference Include="..\AppDemo.Modules.ModuleA\AppDemo.Modules.ModuleA.csproj" />
+    <ProjectReference Include="..\AppDemo.Shared\AppDemo.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+</Project>
